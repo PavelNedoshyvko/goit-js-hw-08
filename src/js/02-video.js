@@ -7,10 +7,6 @@ const iframe = document.querySelector('#vimeo-player');
 
 player.on('timeupdate', throttle(recordingCurrentTime, 1000));
 	
-function recordingCurrentTime(data) { 
-	localStorage.setItem("videoplayer-current-time", JSON.stringify(data));
-}
-
 try {
 	const {seconds} = JSON.parse(localStorage.getItem("videoplayer-current-time"));
 	player.setCurrentTime(seconds);
@@ -18,3 +14,7 @@ try {
 	console.log(error.name);
 	console.log(error.message);
 };
+
+function recordingCurrentTime(data) { 
+	localStorage.setItem("videoplayer-current-time", JSON.stringify(data));
+}
