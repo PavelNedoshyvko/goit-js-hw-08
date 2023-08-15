@@ -18,7 +18,7 @@ function onFormSubmit(evt) {
 			return alert('All fields must be filled!!!')
 		};
 	console.log(JSON.parse(localStorage.getItem("feedback-form-state")));
-	localStorage.clear();
+	localStorage.removeItem("feedback-form-state");
 	evt.currentTarget.reset();
 }
 
